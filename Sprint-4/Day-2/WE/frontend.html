@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 60%;
+  margin: auto;
+  margin-top: 50px;
+  text-align: center;
+}
+
+table td,
+table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+table tr:nth-child(even) {
+  background-color: #8caacf;
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #0468aa;
+  color: white;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type="submit"] {
+  background-color: #2b619e;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 20px;
+}
+
+input[type="submit"]:hover {
+  background-color: #3973b6;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+h1 {
+  text-align: center;
+  font-size: 50px;
+  text-transform: uppercase;
+  font-family: monospace;
+  color: #2b619e;
+  text-decoration: underline;
+}
+
+img {
+  height: 100px;
+  width: 100px;
+}
+
+    </style>
+  </head>
+  <body>
+    <table>
+      <!-- Dont change order of columns -->
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Role</th>
+          <th>Company Logo</th>
+        </tr>
+      </thead>
+      <tbody>
+      <!-- Append your output to tbody -->
+      <!-- <tr>
+        <td></td>
+        <td>Chandra</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr> -->
+      </tbody>
+    </table>
+  </body>
+</html>
+
+<script>
+  document.querySelector("form").addEventListener("submit", myFunction);
+
+function myFunction() {
+  event.preventDefault();
+  var avatar = document.querySelector("#image").value;
+
+  var name = document.querySelector("#name").value;
+
+  var role = document.querySelector("#role").value;
+
+  var logo = document.querySelector("#companyLogo").value;
+
+  console.log(avatar, name, role, logo);
+
+  var tr = document.createElement("tr");
+
+  var td1 = document.createElement("td");
+  var student_avatar = document.createElement("img");
+  student_avatar.setAttribute("src", avatar);
+  td1.append(student_avatar);
+
+  var td2 = document.createElement("td");
+  td2.innerText = name;
+
+  var td3 = document.createElement("td");
+  td3.innerText = role;
+
+  var td4 = document.createElement("td");
+  var companyLogo = document.createElement("img");
+  companyLogo.setAttribute("src", logo);
+  td4.append(student_avatar);
+
+
+
+  tr.append(td1, td2, td3, td4);
+
+  document.querySelector("tbody").append(tr);
+}
+
+</script>
+
